@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.shoestoreinventoryapp.databinding.FragmentWelcomeScreenBinding
 
 class WelcomeScreenFragment : Fragment() {
@@ -15,6 +16,9 @@ class WelcomeScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_welcome_screen, container, false)
+        binding.navigateToInstScreenButton.setOnClickListener { v:View->
+            v.findNavController().navigate(R.id.action_welcomeScreenFragment_to_instructionFragment)
+        }
         return binding.root
     }
 }

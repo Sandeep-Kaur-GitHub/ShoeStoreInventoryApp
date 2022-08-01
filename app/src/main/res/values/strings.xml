@@ -12,4 +12,8 @@
     <string name="welcome_n_to_n_shoe_store_inventory">Welcome \n to \n Shoe Store Inventory</string>
     <string name="let_s_explore_our_inventory">Let\'s explore our inventory</string>
     <string name="next">Next</string>
+    <string name="_2_press_the_button_on_the_bottom_right_corner_to_add_new_shoes_to_the_list">2. Press the button on the bottom right corner to add new shoes to the list</string>
+    <string name="_1_press_the_three_dots_in_the_upper_right_corner_to_logout">1. Press the three dots in the upper right corner to Logout</string>
+    <string name="next2">next</string>
+    <string name="instructions">Instructions</string>
 </resources>

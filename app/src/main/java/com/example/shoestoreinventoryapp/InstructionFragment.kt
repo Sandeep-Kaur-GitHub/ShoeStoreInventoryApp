@@ -6,15 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.example.shoestoreinventoryapp.databinding.FragmentWelcomeScreenBinding
+import com.example.shoestoreinventoryapp.databinding.FragmentInstructionBinding
 
-class WelcomeScreenFragment : Fragment() {
-    private lateinit var binding: FragmentWelcomeScreenBinding
+class InstructionFragment : Fragment() {
+    private lateinit var binding: FragmentInstructionBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding=DataBindingUtil.inflate(inflater,R.layout.fragment_welcome_screen, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instruction, container, false)
         return binding.root
     }
+
 }

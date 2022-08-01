@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginFragment">
+
+        <TextView
+            android:id="@+id/title_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/shoe_store_inventory"
+            android:textAlignment="center"
+            android:textColor="#03A9F4"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/emailLabel_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:text="@string/e_mail"
+            android:textColor="#CA8C3F"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/enterEmail_edittext"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/enterEmail_edittext" />
+
+        <TextView
+            android:id="@+id/passwordLabel_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:text="@string/password"
+            android:textColor="#CA8C3F"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/enterPassword_edittext"
+            app:layout_constraintEnd_toStartOf="@+id/enterPassword_edittext"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/enterEmail_edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:hint="@string/enter_your_email"
+            android:inputType="textPersonName|textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/emailLabel_textview"
+            app:layout_constraintTop_toBottomOf="@+id/title_textview" />
+
+        <EditText
+            android:id="@+id/enterPassword_edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:hint="@string/enter_your_password"
+            android:inputType="number|numberPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/passwordLabel_textview"
+            app:layout_constraintTop_toBottomOf="@+id/enterEmail_edittext" />
+
+        <Button
+            android:id="@+id/signUp_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:text="@string/sign_up"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/LogIn_button"
+            app:layout_constraintEnd_toStartOf="@+id/LogIn_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/LogIn_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="80dp"
+            android:text="@string/log_in"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/signUp_button"
+            app:layout_constraintTop_toBottomOf="@+id/enterPassword_edittext" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

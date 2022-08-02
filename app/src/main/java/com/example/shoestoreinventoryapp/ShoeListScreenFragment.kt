@@ -16,29 +16,29 @@ import com.example.shoestoreinventoryapp.databinding.FragmentShoeListScreenBindi
 class ShoeListScreenFragment : Fragment() {
     private lateinit var viewModel: ListOfShoesViewModel
     private lateinit var binding: FragmentShoeListScreenBinding
-    val listItem= arrayOf<String>("hello", "hi","seeray")
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        binding=DataBindingUtil.inflate(inflater,R.layout.fragment_shoe_list_screen, container, false)
-        viewModel=ViewModelProvider(this).get(ListOfShoesViewModel::class.java)
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list_screen, container, false)
+        viewModel = ViewModelProvider(this).get(ListOfShoesViewModel::class.java)
         setHasOptionsMenu(true)
-       val arr= ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,listItem)
-       binding.customListView.adapter=arr
 
-        viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
-
-        })
-        return binding.root
+        val myada= shoeListAdapter(requireContext(),viewModel.shoeName,viewModel.shoeSize,viewModel.shoeDescription,viewModel.shoeImage, viewModel.shoeCompanyName)
+        binding.customListView.adapter =myada
+            return binding.root
     }
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu,menu)
+        inflater.inflate(R.menu.menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item,requireView().findNavController())
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
 

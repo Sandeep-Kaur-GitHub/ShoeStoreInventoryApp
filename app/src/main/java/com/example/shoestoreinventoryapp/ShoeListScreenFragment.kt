@@ -16,18 +16,21 @@ import com.example.shoestoreinventoryapp.databinding.FragmentShoeListScreenBindi
 class ShoeListScreenFragment : Fragment() {
     private lateinit var viewModel: ListOfShoesViewModel
     private lateinit var binding: FragmentShoeListScreenBinding
-    val listItem= listOf<String>("hello", "hi")
+    val listItem= arrayOf<String>("hello", "hi","seeray")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_shoe_list_screen, container, false)
         viewModel=ViewModelProvider(this).get(ListOfShoesViewModel::class.java)
         setHasOptionsMenu(true)
+       val arr= ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,listItem)
+       binding.customListView.adapter=arr
 
-        val arr: ArrayAdapter<kotlin.String>
-        arr= ArrayAdapter(this,android.R.layout.simple_list_item_1,listItem)
-        binding.customListView.adapter=arr
+        viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
+
+        })
         return binding.root
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)

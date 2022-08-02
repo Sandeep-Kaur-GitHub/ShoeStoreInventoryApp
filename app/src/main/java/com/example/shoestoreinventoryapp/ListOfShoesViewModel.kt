@@ -4,7 +4,8 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 
 class ListOfShoesViewModel: ViewModel() {
-  /* lateinit var shoeList: MutableList<String>
+    val score=2
+   lateinit var shoeList: MutableList<String>
    init {
        getShoeList()
    }
@@ -33,5 +34,5 @@ class ListOfShoesViewModel: ViewModel() {
             "roll",
             "bubble"
         )
-    }*/
+    }
 }

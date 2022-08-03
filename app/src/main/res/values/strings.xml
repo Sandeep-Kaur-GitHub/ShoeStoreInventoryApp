@@ -16,4 +16,15 @@
     <string name="_1_press_the_three_dots_in_the_upper_right_corner_to_logout">1. Press the three dots in the upper right corner to Logout</string>
     <string name="next2">next</string>
     <string name="instructions">Instructions</string>
+    <string name="enter_shoe_s_details">Enter Shoe\'s Details</string>
+    <string name="description">Description</string>
+    <string name="product_name">Product Name</string>
+    <string name="size">Size</string>
+    <string name="description1">Description</string>
+    <string name="company">Company</string>
+    <string name="enter_size">Enter size</string>
+    <string name="enter_shoe_s_name">Enter Shoe\'s Name</string>
+    <string name="enter_company_name">Enter Company Name</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>

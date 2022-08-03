@@ -43,6 +43,26 @@
         <action
             android:id="@+id/action_shoeListScreenFragment_to_shoeDetailEntryFragment"
             app:destination="@id/shoeDetailEntryFragment" />
+        <argument
+            android:name="Name"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="s" />
+        <argument
+            android:name="Size"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="s" />
+        <argument
+            android:name="Description"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="ss" />
+        <argument
+            android:name="Company"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="ss" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailEntryFragment"

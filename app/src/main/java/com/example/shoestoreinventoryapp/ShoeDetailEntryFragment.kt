@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentResultOwner
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.shoestoreinventoryapp.databinding.FragmentShoeDetailEntryBinding
 
@@ -21,12 +23,13 @@ class ShoeDetailEntryFragment : Fragment() {
         binding.buttonCancel.setOnClickListener { v:View->
             v.findNavController().navigate(R.id.action_shoeDetailEntryFragment_to_shoeListScreenFragment)
         }
+
         binding.buttonSave.setOnClickListener { v:View->
             val getShoeName = binding.NameEdittext.text.toString()
             val getShoeSize= binding.SizeEdittext.text.toString()
             val getShoeDescription= binding.descriptionEdittext.text.toString()
             val getShoeCompanyName= binding.CompanyNameEdittext.text.toString()
-            v.findNavController().navigate(ShoeDetailEntryFragmentDirections.actionShoeDetailEntryFragmentToShoeListScreenFragment(getShoeName,getShoeSize,getShoeDescription,getShoeCompanyName))
+            v.findNavController().navigate(ShoeDetailEntryFragmentDirections.actionShoeDetailEntryFragmentToShoeListScreenFragment())
         }
         return binding.root
     }

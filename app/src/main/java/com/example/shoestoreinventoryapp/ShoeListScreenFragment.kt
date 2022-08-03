@@ -3,16 +3,11 @@ package com.example.shoestoreinventoryapp
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.ArrayAdapter
-import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
-import com.example.shoestoreinventoryapp.R
 import com.example.shoestoreinventoryapp.databinding.FragmentShoeListScreenBinding
 
 class ShoeListScreenFragment : Fragment() {
@@ -27,7 +22,6 @@ class ShoeListScreenFragment : Fragment() {
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list_screen, container, false)
         viewModel = ViewModelProvider(this).get(ListOfShoesViewModel::class.java)
         setHasOptionsMenu(true)
-
         binding.floatingActionButton.setOnClickListener { v: View->
             v.findNavController().navigate(R.id.action_shoeListScreenFragment_to_shoeDetailEntryFragment)
         }
@@ -35,8 +29,6 @@ class ShoeListScreenFragment : Fragment() {
         val myShoeData= shoeListAdapter(requireContext(),viewModel.shoeName,viewModel.shoeSize,viewModel.shoeDescription,viewModel.shoeImage, viewModel.shoeCompanyName)
         binding.customListView.adapter =myShoeData
 
-        val args=ShoeListScreenFragmentArgs.fromBundle(requireArguments())
-        Toast.makeText(context,"NumCorrect: ${args.name}", Toast.LENGTH_LONG).show()
         return binding.root
     }
 

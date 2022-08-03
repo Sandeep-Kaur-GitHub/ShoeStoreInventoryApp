@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ListOfShoesViewModel : ViewModel() {
+class ListOfShoesViewModel() : ViewModel() {
     val shoeName =
         arrayOf("Nike ZoomX ", "Skechers Work Men's Nampa Slip Resistant Work Shoe Black","Gennaio Women's Sneaker")
     val shoeDescription = arrayOf(

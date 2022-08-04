@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentResultOwner
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -15,6 +17,7 @@ import com.example.shoestoreinventoryapp.databinding.FragmentShoeDetailEntryBind
 
 class ShoeDetailEntryFragment : Fragment() {
     private lateinit var binding:FragmentShoeDetailEntryBinding
+   val viewModel:ListOfShoesViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,14 +26,14 @@ class ShoeDetailEntryFragment : Fragment() {
         binding.buttonCancel.setOnClickListener { v:View->
             v.findNavController().navigate(R.id.action_shoeDetailEntryFragment_to_shoeListScreenFragment)
         }
-
+        val myShoes=viewModel.getNewShoe()
+        binding.myVarshoe=myShoes
         binding.buttonSave.setOnClickListener { v:View->
-            val getShoeName = binding.NameEdittext.text.toString()
-            val getShoeSize= binding.SizeEdittext.text.toString()
-            val getShoeDescription= binding.descriptionEdittext.text.toString()
-            val getShoeCompanyName= binding.CompanyNameEdittext.text.toString()
-            v.findNavController().navigate(ShoeDetailEntryFragmentDirections.actionShoeDetailEntryFragmentToShoeListScreenFragment())
+            viewModel.save(myShoes)
+           v.findNavController().navigate(ShoeDetailEntryFragmentDirections.actionShoeDetailEntryFragmentToShoeListScreenFragment())
         }
+
+
         return binding.root
     }
 }

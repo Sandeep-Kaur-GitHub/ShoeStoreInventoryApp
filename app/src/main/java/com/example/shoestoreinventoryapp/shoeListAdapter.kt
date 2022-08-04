@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-class shoeListAdapter(private val c: Context,private val name:Array<String>,
+class shoeListAdapter(private val c: Context, private val name:Array<String>,
                       private val size:Array<String>, private val description:Array<String>, private val image:Array<Int>, private val companyName:Array<String>):
     ArrayAdapter<String>(c,R.layout.custom_list_view,name) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {

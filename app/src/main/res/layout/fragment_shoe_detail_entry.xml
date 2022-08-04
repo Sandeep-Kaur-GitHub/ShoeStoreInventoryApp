@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="myVarshoe"
+        type="com.example.shoestoreinventoryapp.DataClass" />
+</data>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout5"
@@ -81,7 +87,9 @@
             android:hint="@string/enter_shoe_s_name"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            android:text="@={myVarshoe.name}"
+        />
 
         <EditText
             android:id="@+id/Size_edittext"
@@ -93,7 +101,9 @@
             android:hint="@string/enter_size"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Name_edittext" />
+            app:layout_constraintTop_toBottomOf="@+id/Name_edittext"
+            android:text="@={myVarshoe.size}"
+            />
 
         <EditText
             android:id="@+id/description_edittext"
@@ -105,7 +115,8 @@
             android:hint="@string/description"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Size_edittext" />
+            app:layout_constraintTop_toBottomOf="@+id/Size_edittext"
+            android:text="@={myVarshoe.description}"/>
 
         <EditText
             android:id="@+id/CompanyName_edittext"
@@ -117,7 +128,8 @@
             android:hint="@string/enter_company_name"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description_edittext" />
+            app:layout_constraintTop_toBottomOf="@+id/description_edittext"
+            android:text="@={myVarshoe.company}"/>
 
         <Button
             android:id="@+id/button_cancel"

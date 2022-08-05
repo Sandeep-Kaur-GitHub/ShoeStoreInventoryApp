@@ -35,35 +35,23 @@ class ShoeListScreenFragment : Fragment() {
         binding.myVarShoeData = viewModel
 
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { list ->
-            val custom =
-                LayoutInflater.from(context).inflate(R.layout.custom_list_view, null, false)
-            binding.shoeLinearLayout.addView(custom)
-            val valshoename = custom.findViewById(R.id.shoeName_textView) as TextView
-            val valshoeSize = custom.findViewById(R.id.shoeSize_textView) as TextView
-            val valshoedescription = custom.findViewById(R.id.description_textView) as TextView
-            val valshoeimage = custom.findViewById(R.id.imageView) as ImageView
-            val shoeCompanyName = custom.findViewById(R.id.companyName_textView) as TextView
-
-
             list.forEach() {
+                val custom =
+                    LayoutInflater.from(context).inflate(R.layout.custom_list_view, null, false)
+
+                val valshoename = custom.findViewById(R.id.shoeName_textView) as TextView
+                val valshoeSize = custom.findViewById(R.id.shoeSize_textView) as TextView
+                val valshoedescription = custom.findViewById(R.id.description_textView) as TextView
+                val valshoeimage = custom.findViewById(R.id.imageView) as ImageView
+                val shoeCompanyName = custom.findViewById(R.id.companyName_textView) as TextView
                 valshoename.text = it.name
                 valshoeSize.text = it.size
                 valshoedescription.text = it.description
                 valshoeimage.setImageResource(R.drawable.shoe1)
                 shoeCompanyName.text = it.company
+                binding.shoeLinearLayout.addView(custom)
             }
         })
-
-        val myShoeData = shoeListAdapter(
-            requireContext(),
-            viewModel.shoeName,
-            viewModel.shoeSize,
-            viewModel.shoeDescription,
-            viewModel.shoeImage,
-            viewModel.shoeCompanyName
-        )
-        binding.customListView.adapter = myShoeData
-
         return binding.root
     }
 

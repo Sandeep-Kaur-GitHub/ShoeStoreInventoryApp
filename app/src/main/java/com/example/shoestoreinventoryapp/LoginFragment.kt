@@ -16,8 +16,8 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding=DataBindingUtil.inflate(inflater,R.layout.fragment_login, container, false)
-        binding.LogInButton.setOnClickListener { v:View->
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        binding.LogInButton.setOnClickListener { v: View ->
             v.findNavController().navigate(R.id.action_loginFragment_to_welcomeScreenFragment)
         }
         return binding.root

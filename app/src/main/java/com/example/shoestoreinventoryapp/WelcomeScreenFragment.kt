@@ -15,8 +15,9 @@ class WelcomeScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding=DataBindingUtil.inflate(inflater,R.layout.fragment_welcome_screen, container, false)
-        binding.navigateToInstScreenButton.setOnClickListener { v:View->
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_welcome_screen, container, false)
+        binding.navigateToInstScreenButton.setOnClickListener { v: View ->
             v.findNavController().navigate(R.id.action_welcomeScreenFragment_to_instructionFragment)
         }
         return binding.root

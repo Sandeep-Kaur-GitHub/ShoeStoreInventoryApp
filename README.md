@@ -38,4 +38,4 @@ Step14-Create a new Shoe Detail destination that includes:
 Step14-Make sure you can’t go back to onboarding screens In the Shoe List screen:
 Step15-use an Activity level ViewModel to hold a list of Shoes (use by activityViewModels)
 Step16-Observe the shoes variable from the ViewModel
-Step17-Add a new layout item into the scrollview for each shoe.
+Step17-Add new layout item into the scrollview for each shoe.
